@@ -13,3 +13,12 @@ def get_num_chars(filepath):
         else:
             chars[char.lower()] = 1
     return chars
+
+def get_sort_chars(filepath):
+    list_a = []
+    for char, num in get_num_chars(filepath).items():
+        dict_a = {"char": char, "num": num}
+        list_a.append(dict_a)
+    list_a.sort(key=lambda d: d["num"], reverse=True)
+    # sorted_list_a = sorted(list_a, key=lambda d: d["num"], reverse=reversed)
+    return list_a
